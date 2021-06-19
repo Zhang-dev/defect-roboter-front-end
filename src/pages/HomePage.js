@@ -16,6 +16,7 @@ import ResetPassword from "./examples/ResetPassword";
 import Lock from "./examples/Lock";
 import NotFoundPage from "./examples/NotFound";
 import ServerError from "./examples/ServerError";
+import Prediction from "./Prediction";
 
 // documentation pages
 import DocsOverview from "./documentation/DocsOverview";
@@ -108,6 +109,7 @@ export default () => (
     <RouteWithLoader exact path={Routes.Lock.path} component={Lock} />
     <RouteWithLoader exact path={Routes.NotFound.path} component={NotFoundPage} />
     <RouteWithLoader exact path={Routes.ServerError.path} component={ServerError} />
+    <RouteWithSidebar exact path={Routes.Prediction.path} component={Prediction} />
 
     {/* pages */}
     <RouteWithSidebar exact path={Routes.DashboardOverview.path} component={DashboardOverview} />
