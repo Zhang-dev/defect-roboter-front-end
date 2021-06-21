@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
 import { InputGroup, Form, Button } from "@themesberg/react-bootstrap";
+import axios from 'axios';
+
+const apiEndpoint = 'http://localhost:3001/api/predict'
 
 const PredictionForm = (props) => {
     const [inputField, setInputField] = useState({
-        first_name: '',
-        last_name: '',
-        gmail: ''
+        description: ''
+    })
+
+    const [prediction, setPrediction] = useState({
+        result: ''
     })
 
     const inputsHandler = (e) => {
         setInputField({ [e.target.name]: e.target.value })
     }
 
-    const submitHandler = () => {
-        alert(inputField.description)
+    const submitHandler = async () => {
+        const defect = { description: inputField.description }
+        const {data} = await axios.post(apiEndpoint, defect)
+        setPrediction({result: data.result})
     }
 
     return (<div>
@@ -29,6 +36,11 @@ const PredictionForm = (props) => {
                 />
             </InputGroup>
         </div>
+        {prediction.result &&
+        <h4>
+          The defect could belog to the category: {prediction.result}.
+        </h4>
+      }
         <div className="mb-4 mb-lg-0">
             <Button
                 variant="primary"
