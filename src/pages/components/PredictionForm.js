@@ -29,7 +29,7 @@ const PredictionForm = (props) => {
                 <InputGroup.Text />
                 <Form.Control
                     type="text"
-                    placeholder="Input your description of the defect"
+                    placeholder="Defect ID"
                     name="description"
                     onChange={inputsHandler}
                     value={inputField.description}

@@ -14,7 +14,7 @@ export default () => {
                     <Breadcrumb.Item active>Category Prediction</Breadcrumb.Item>
                 </Breadcrumb>
                 <h4>Category Prediction</h4>
-                <p className="mb-0">Please input your description of the defect.</p>
+                <p className="mb-0">Please input the defect ID.{' '}</p>
                 <PredictionForm />
             </div>
         </div>
