@@ -24,7 +24,7 @@ const PredictionForm = (props) => {
     }
 
     return (<div>
-        <div className="mb-4 mb-lg-0">
+        <div className="mb-4">
             <InputGroup className="me-2 me-lg-3">
                 <InputGroup.Text />
                 <Form.Control
@@ -41,7 +41,7 @@ const PredictionForm = (props) => {
           The defect could belog to the category: {prediction.result}.
         </h4>
       }
-        <div className="mb-4 mb-lg-0">
+        <div className="mb-4">
             <Button
                 variant="primary"
                 size="md"
