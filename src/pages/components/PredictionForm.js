@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { InputGroup, Form, Button } from "@themesberg/react-bootstrap";
 import axios from 'axios';
 
-const apiEndpoint = 'http://localhost:3001/api/predict'
+const apiEndpoint = 'http://predictor:3000/api/predict'
 
 const PredictionForm = (props) => {
     const [inputField, setInputField] = useState({
-        description: ''
+        id: ''
     })
 
     const [prediction, setPrediction] = useState({
@@ -18,8 +18,8 @@ const PredictionForm = (props) => {
     }
 
     const submitHandler = async () => {
-        const defect = { description: inputField.description }
-        const {data} = await axios.post(apiEndpoint, defect)
+        const id = inputField.id
+        const {data} = await axios.get(apiEndpoint + '?id=' + id)
         setPrediction({result: data.result})
     }
 
