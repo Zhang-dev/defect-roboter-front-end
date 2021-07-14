@@ -6,7 +6,7 @@ const apiEndpoint = 'http://localhost:3001/api/predict'
 
 const PredictionForm = (props) => {
     const [inputField, setInputField] = useState({
-        description: ''
+        id: ''
     })
 
     const [prediction, setPrediction] = useState({
@@ -18,8 +18,8 @@ const PredictionForm = (props) => {
     }
 
     const submitHandler = async () => {
-        const defect = { description: inputField.description }
-        const {data} = await axios.post(apiEndpoint, defect)
+        const id = inputField.id
+        const {data} = await axios.get(apiEndpoint + '?id=' + id)
         setPrediction({result: data.result})
     }
 
@@ -30,7 +30,7 @@ const PredictionForm = (props) => {
                 <Form.Control
                     type="text"
                     placeholder="Defect ID"
-                    name="description"
+                    name="id"
                     onChange={inputsHandler}
                     value={inputField.description}
                 />
