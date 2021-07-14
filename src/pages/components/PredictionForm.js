@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { InputGroup, Form, Button } from "@themesberg/react-bootstrap";
 import axios from 'axios';
 
-const apiEndpoint = 'http://predictor:3000/api/predict'
+const apiEndpoint = 'http://localhost:3001/api/predict'
 
 const PredictionForm = (props) => {
     const [inputField, setInputField] = useState({
